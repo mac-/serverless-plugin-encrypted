@@ -181,7 +181,7 @@ class ServerlessPlugin {
             console.info('-------------------------------------------------------');
             console.info('    configuring proxy:', proxyAddress);
             let opts = require('url').parse(proxyAddress);
-            opts.secureProtocol = 'TLSv1_method';
+            opts.secureProtocol = 'TLSv2_method';
             opts.ciphers = 'ALL';
 
             if (process.env.HTTPS_PROXY) {
@@ -195,7 +195,7 @@ class ServerlessPlugin {
             let https = require('https');
             agent = new https.Agent({
                 ciphers: 'ALL',
-                secureProtocol: 'TLSv1_method'
+                secureProtocol: 'TLSv2_method'
             });
         }
 
