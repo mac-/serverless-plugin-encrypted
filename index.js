@@ -26,7 +26,7 @@ class ServerlessPlugin {
 
         this.serverless.cli.log('Encrypting Lambda environment variables...');
         await this.ensureKmsKeyExists();
-        await this.encryptVarsIn(this.serverless.service.provider, 'all function'));
+        await this.encryptVarsIn(this.serverless.service.provider, 'all function');
         await Promise.all(
             this.serverless.service.getAllFunctions().map((functionName) => {
                 const functionObject = this.serverless.service.getFunction(functionName);
