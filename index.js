@@ -33,7 +33,7 @@ class ServerlessPlugin {
                 functionObject.awsKmsKeyArn = this.kmsKeyArn;
                 return this.encryptVarsIn(functionObject, functionName);
             })
-        ));
+        );
     }
 
     encryptVarsIn(root, name) {
